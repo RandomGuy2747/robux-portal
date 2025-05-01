@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Robux Portal PRO++</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <button onclick="switchTab('home')">🏠 Home</button>
+    <button onclick="switchTab('calculator')">📊 Calculator</button>
+    <button onclick="switchTab('planner')">🎯 Goal Planner</button>
+    <button onclick="switchTab('badges')">🏆 Badges</button>
+    <button onclick="switchTab('chatbot')">🤖 Chatbot</button>
+    <button onclick="switchTab('progress')">📈 Progress</button>
+  </div>
+
+  <div class="content">
+    <div id="home" class="tab active"><h1>🏠 Welcome to Robux Portal PRO++</h1></div>
+
+    <div id="calculator" class="tab">
+      <h1>📊 Robux Calculator</h1>
+      <input type="number" id="robuxInput" oninput="calcRobux()" placeholder="Enter Robux">
+      <p id="roproValue">RoPro: $0.00</p>
+      <p id="devexValue">DevEx: $0.00</p>
+      <p id="buyingValue">Buying: $0.00</p>
+      <div style="margin-top:30px;">
+        <h3>🥧 Kept vs Lost Robux</h3>
+        <p id="calcRoProEstimateText">RoPro Estimate: $0.00</p>
+        <div style="display: flex; gap: 20px;">
+          <p id="calcKeepPercent">You keep: 0%</p>
+          <p id="calcLosePercent">You lose: 0%</p>
+        </div>
+        <canvas id="calcPie" width="300" height="300" style="border-radius:8px;"></canvas>
+      </div>
+    </div>
+
+    <div id="planner" class="tab">
+      <h1>🎯 Goal Planner</h1>
+      <input type="number" id="goalAmount" placeholder="Goal Robux">
+      <input type="number" id="dailyAmount" placeholder="Daily Earn">
+      <button onclick="calculateGoal()">Calculate</button>
+      <p id="goalResult"></p>
+    </div>
+
+    <div id="badges" class="tab">
+      <h1>🏆 Badge Collection</h1>
+      <div id="badgeContainer"></div>
+    </div>
+
+    <div id="chatbot" class="tab">
+      <h1>🤖 Chatbot Assistant</h1>
+      <div id="chatLog" style="background:#1e1e1e;padding:10px;height:200px;overflow-y:auto;border-radius:8px;"></div>
+      <input type="text" id="chatInput" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button onclick="sendChat()">Send</button>
+      <button onclick="resetChat()" style="margin-left:10px;background:#f44336;">🔄 Reset Chat</button>
+    </div>
+
+    <div id="progress" class="tab">
+      <h1>📈 Progress Tracker</h1>
+      <div>
+        <h3>🎯 Goal Progress</h3>
+        <div id="goalBar" style="width:300px;height:20px;background:#333;border-radius:5px;">
+          <div id="goalProgress" style="height:100%;width:0%;background:#4caf50;border-radius:5px;"></div>
+        </div>
+        <p id="goalText">Progress: 0 / 0 Robux (0%)</p>
+      </div>
+      <div style="margin-top:20px;">
+        <h3>🏆 Badges Unlocked</h3>
+        <p id="badgeProgressText">0 / 0 badges unlocked (0%)</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
