@@ -62,7 +62,7 @@ function calculateGoal() {
 }
 
 function shareProgress() {
-  const target = document.querySelector("#progress");
+  const target = document.querySelector("#progressWrapper");
   html2canvas(target, { backgroundColor: '#121212' }).then(canvas => {
     canvas.toBlob(blob => {
       const url = URL.createObjectURL(blob);
@@ -80,7 +80,7 @@ function shareProgress() {
 
 
 function copyToClipboard() {
-  const target = document.querySelector("#progress");
+  const target = document.querySelector("#progressWrapper");
   html2canvas(target, { backgroundColor: '#121212' }).then(canvas => {
     canvas.toBlob(blob => {
       const item = new ClipboardItem({ "image/png": blob });
