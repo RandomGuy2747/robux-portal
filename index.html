@@ -5,6 +5,7 @@
   <title>Robux Portal PRO++</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
   <div class="sidebar">
@@ -69,6 +70,11 @@
       <div style="margin-top:20px;">
         <h3>🏆 Badges Unlocked</h3>
         <p id="badgeProgressText">0 / 0 badges unlocked (0%)</p>
+      </div>
+      <div style="margin-top:30px;">
+        <button onclick="shareProgress()" style="padding:10px 15px;background:#2196f3;color:white;border:none;border-radius:6px;">📤 Share Progress</button>
+        <button onclick="copyToClipboard()" style="padding:10px 15px;background:#4caf50;color:white;border:none;border-radius:6px;margin-top:10px;">📋 Copy to Clipboard</button>
+<p id="shareStatus" style="margin-top:10px;color:#ccc;"></p>
       </div>
     </div>
   </div>

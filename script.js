@@ -60,3 +60,39 @@ function calculateGoal() {
     updateProgressTracker();
   }
 }
+
+function shareProgress() {
+  const target = document.querySelector("#progress");
+  html2canvas(target).then(canvas => {
+    canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.download = "robux_progress.png";
+      link.href = url;
+      link.click();
+      document.getElementById("shareStatus").innerText = "✅ Progress image downloaded!";
+    });
+  }).catch(err => {
+    console.error(err);
+    document.getElementById("shareStatus").innerText = "❌ Failed to capture progress.";
+  });
+}
+
+
+function copyToClipboard() {
+  const target = document.querySelector("#progress");
+  html2canvas(target).then(canvas => {
+    canvas.toBlob(blob => {
+      const item = new ClipboardItem({ "image/png": blob });
+      navigator.clipboard.write([item]).then(() => {
+        document.getElementById("shareStatus").innerText = "📋 Progress image copied to clipboard!";
+      }, err => {
+        console.error(err);
+        document.getElementById("shareStatus").innerText = "❌ Failed to copy image.";
+      });
+    });
+  }).catch(err => {
+    console.error(err);
+    document.getElementById("shareStatus").innerText = "❌ Failed to capture image.";
+  });
+}
