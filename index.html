@@ -26,15 +26,7 @@
       <p id="roproValue">RoPro: $0.00</p>
       <p id="devexValue">DevEx: $0.00</p>
       <p id="buyingValue">Buying: $0.00</p>
-      <div style="margin-top:30px;">
-        <h3>🥧 Kept vs Lost Robux</h3>
-        <p id="calcRoProEstimateText">RoPro Estimate: $0.00</p>
-        <div style="display: flex; gap: 20px;">
-          <p id="calcKeepPercent">You keep: 0%</p>
-          <p id="calcLosePercent">You lose: 0%</p>
-        </div>
-        <canvas id="calcPie" width="300" height="300" style="border-radius:8px;"></canvas>
-      </div>
+      <canvas id="calcPie" width="300" height="300" style="border-radius:8px;"></canvas>
     </div>
 
     <div id="planner" class="tab">
@@ -59,23 +51,23 @@
     </div>
 
     <div id="progress" class="tab">
-  <div id="progressWrapper" style="background:#121212;padding:20px;border-radius:10px;">
-      <h1>📈 Progress Tracker</h1>
-      <div>
+      <div id="progressWrapper" style="background:#121212;padding:20px;border-radius:10px;text-align:left;">
+        <div id="progressScreenshotHeader" style="display:none;" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+          <h2 style="font-size:20px;margin:0;">🚀 Robux Portal PRO++</h2>
+          <span id="progressTimestamp" style="font-size:12px;color:#ccc;"></span>
+        </div>
         <h3>🎯 Goal Progress</h3>
         <div id="goalBar" style="width:300px;height:20px;background:#333;border-radius:5px;">
           <div id="goalProgress" style="height:100%;width:0%;background:#4caf50;border-radius:5px;"></div>
         </div>
         <p id="goalText">Progress: 0 / 0 Robux (0%)</p>
-      </div>
-      <div style="margin-top:20px;">
+
         <h3>🏆 Badges Unlocked</h3>
         <p id="badgeProgressText">0 / 0 badges unlocked (0%)</p>
-      </div>
-      <div style="margin-top:30px;">
+
         <button onclick="shareProgress()" style="padding:10px 15px;background:#2196f3;color:white;border:none;border-radius:6px;">📤 Share Progress</button>
-        <button onclick="copyToClipboard()" style="padding:10px 15px;background:#4caf50;color:white;border:none;border-radius:6px;margin-top:10px;">📋 Copy to Clipboard</button>
-<p id="shareStatus" style="margin-top:10px;color:#ccc;"></p>
+        <button onclick="copyToClipboard()" style="padding:10px 15px;background:#4caf50;color:white;border:none;border-radius:6px;margin-left:10px;">📋 Copy to Clipboard</button>
+        <p id="shareStatus" style="margin-top:10px;color:#ccc;"></p>
       </div>
     </div>
   </div>
